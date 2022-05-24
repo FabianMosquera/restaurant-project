@@ -1,12 +1,13 @@
 import { HeaderContainer } from "./StyledHeader";
 import { Context } from "../../context/context";
+import { Link } from "react-router-dom";
 import { useContext } from "react";
 
-function Login(){
+function Login(props: any){
   return (
     <>
-    <a href="http://localhost:3000/login"> Login</a>
-    <a href="http://localhost:3000/signup"> Sign Up</a>
+    <Link to="/login"> Login</Link>
+    <Link to="/signup"> SignUp</Link>
     </>
     )
 }
@@ -14,17 +15,17 @@ function Login(){
 function Logout(){
   return (
     <>
-    <a href="http://localhost:3000/"> Logout</a>
+    <Link to="/signup"> SignUp</Link>
     </>
     )
 }
 
 function Header() {
   const { userLogin } = useContext(Context);
-  
+  console.log(userLogin)
   return (
     <HeaderContainer>
-      <h2>{userLogin ? <Logout/>: <Login/>}</h2>
+      <h2>{userLogin ? <Logout/>:<Login/>}</h2>
     </HeaderContainer>
   );
 }
