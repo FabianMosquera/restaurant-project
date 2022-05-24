@@ -13,9 +13,9 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
       <BrowserRouter>
       <UserContextProvider>
+      <Header />
         <Routes>
           <Route path={"/signup"} element={<SignUp />} />
             <Route path={"/login"} element={<Login />} />
