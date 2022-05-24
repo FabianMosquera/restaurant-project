@@ -1,4 +1,4 @@
-import { HeaderContainer } from "./StyledHeader";
+import { HeaderContainer, Linkslogin } from "./StyledHeader";
 import { Context } from "../../context/context";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
@@ -6,8 +6,8 @@ import { useContext } from "react";
 function Login(props: any){
   return (
     <>
-    <Link to="/login"> Login</Link>
-    <Link to="/signup"> SignUp</Link>
+    <Linkslogin to="/login"> Login</Linkslogin>
+    <Linkslogin to="/signup"> SignUp</Linkslogin>
     </>
     )
 }
@@ -15,7 +15,7 @@ function Login(props: any){
 function Logout(){
   return (
     <>
-    <Link to="/signup"> SignUp</Link>
+    <Linkslogin to="/signup"> SignUp</Linkslogin>
     </>
     )
 }
