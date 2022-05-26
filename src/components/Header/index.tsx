@@ -3,6 +3,7 @@ import { Context } from "../../context/context";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 
+
 function Login(props: any){
   return (
     <>
@@ -12,20 +13,21 @@ function Login(props: any){
     )
 }
 
-function Logout(){
+function Logout(props:any){
   return (
     <>
-    <Linkslogin to="/signup"> SignUp</Linkslogin>
+    <Linkslogin to="/login" onClick={props.onClick}> Logout</Linkslogin>
     </>
     )
 }
 
 function Header() {
-  const { userLogin } = useContext(Context);
-  console.log(userLogin)
+  const { userLogin, setUserLogin } = useContext(Context);
+
+
   return (
     <HeaderContainer>
-      <h2>{userLogin ? <Logout/>:<Login/>}</h2>
+      <h3>{userLogin ? <Logout onClick={()=>setUserLogin("")}/>:<Login/>}</h3>
     </HeaderContainer>
   );
 }
