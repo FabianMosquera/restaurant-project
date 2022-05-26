@@ -13,10 +13,7 @@ interface INuser {
 interface IProps {
   children: JSX.Element | JSX.Element[];
 }
-interface INutest {
-  color: string;
-  name: string;
-}
+
 export const Context = createContext<INuser | any>("");
 
 export function UserContextProvider({ children }: IProps) {
