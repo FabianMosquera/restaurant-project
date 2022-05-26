@@ -46,7 +46,7 @@ Antes que nada asegurate de tener instalado npm
    ```
 ## Usage
 
-* Apenas abres tu servidor la pantalla incial que aparecera sera la siguiente interfaz en el cual podra elegir si te quieres registras y loguearte.
+* Apenas abres tu servidor la pantalla incial que aparecera sera la siguiente interfaz en el cual podra elegir si te quieres registrar o loguearte.
 
 ![img](/images/Inicio.PNG)
 
