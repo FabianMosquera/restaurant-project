@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { Context } from "../../context/context";
+import { ContainerForm, StyledTitle, StyledInput, Styledbtn } from "./StyledLogin";
 
 interface INform {
   email: string;
@@ -27,13 +28,15 @@ function Login() {
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input placeholder="email" type="email" {...register("email")} />
+      <ContainerForm onSubmit={handleSubmit(onSubmit)}>
+        <StyledTitle>Email:</StyledTitle>
+        <StyledInput placeholder="email" type="email" {...register("email")} />
         {errors.email && <p>{errors.email.message}</p>}
-        <input placeholder="password" type="text" {...register("password")} />
+        <StyledTitle>Contraseña:</StyledTitle>
+        <StyledInput placeholder="password" type="text" {...register("password")} />
         {errors.password && <p>{errors.password.message}</p>}
-        <input type="submit" value="submit" />
-      </form>
+        <Styledbtn type="submit" value="submit" />
+      </ContainerForm>
     </>
   );
 }

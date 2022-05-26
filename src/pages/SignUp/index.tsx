@@ -1,6 +1,7 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router-dom"
 import { yupResolver } from "@hookform/resolvers/yup";
+import { ContainerForm, StyledTitle, StyledInput, Styledbtn } from "./StyledSignup";
 import * as yup from "yup";
 
 interface INform {
@@ -48,19 +49,22 @@ function SignUp() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input placeholder="email" type="email" {...register("email")} />
+    <ContainerForm onSubmit={handleSubmit(onSubmit)}>
+      <StyledTitle>Email:</StyledTitle>
+      <StyledInput placeholder="email" type="email" {...register("email")} />
       {errors.email && <p>{errors.email.message}</p>}
-      <input placeholder="password" type="text" {...register("password")} />
+      <StyledTitle>Contraseña:</StyledTitle>
+      <StyledInput placeholder="password" type="text" {...register("password")} />
+      <StyledTitle>Confirma contraseña:</StyledTitle>
       {errors.password && <p>{errors.password.message}</p>}
-      <input
+      <StyledInput
         placeholder="confirm password"
         type="text"
         {...register("confirmPass")}
       />
       {errors.confirmPass && <p>{errors.confirmPass.message}</p>}
-      <input type="submit" value="submit" />
-    </form>
+      <Styledbtn type="submit" value="Sign" />
+    </ContainerForm>
   );
 }
 
