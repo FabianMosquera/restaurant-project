@@ -33,7 +33,7 @@ function Login() {
         <StyledInput placeholder="email" type="email" {...register("email")} />
         {errors.email && <p>{errors.email.message}</p>}
         <StyledTitle>Contraseña:</StyledTitle>
-        <StyledInput placeholder="password" type="text" {...register("password")} />
+        <StyledInput placeholder="password" type="password" {...register("password")} />
         {errors.password && <p>{errors.password.message}</p>}
         <Styledbtn type="submit" value="submit" />
       </ContainerForm>

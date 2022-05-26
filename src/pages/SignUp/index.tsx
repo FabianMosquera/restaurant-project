@@ -16,7 +16,7 @@ const schema = yup
     password: yup.string().required(),
     confirmPass: yup
       .string()
-      .oneOf([yup.ref("password")], "Imbecil")
+      .oneOf([yup.ref("password")], "Imbecil escriba bien")
       .required(),
   })
   .required();
@@ -54,12 +54,12 @@ function SignUp() {
       <StyledInput placeholder="email" type="email" {...register("email")} />
       {errors.email && <p>{errors.email.message}</p>}
       <StyledTitle>Contraseña:</StyledTitle>
-      <StyledInput placeholder="password" type="text" {...register("password")} />
+      <StyledInput placeholder="password" type="password" {...register("password")} />
       <StyledTitle>Confirma contraseña:</StyledTitle>
       {errors.password && <p>{errors.password.message}</p>}
       <StyledInput
         placeholder="confirm password"
-        type="text"
+        type="password"
         {...register("confirmPass")}
       />
       {errors.confirmPass && <p>{errors.confirmPass.message}</p>}
